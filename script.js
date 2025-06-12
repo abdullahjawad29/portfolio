@@ -151,7 +151,7 @@ function addBootMessage() {
 }
 
 function updateLoadingBar() {
-  progress += Math.floor(Math.random() * 5) + 3;
+  progress += Math.floor(Math.random() * 5) + 5;
   if (progress > 100) progress = 100;
 
   bar.style.width = `${progress}%`;
@@ -172,7 +172,7 @@ function updateLoadingBar() {
   // Decryption starts AFTER welcome screen is visible
   decryptText("decryptedText", "WELCOME TO THE PORTFOLIO PROFILE OF ABDULLAH JAWAD", 30, 20);
   setTimeout(() => {
-    decryptText("introText", "I’m a computer science and cybersecurity graduate student passionate about building secure systems, solving problems, and pushing the boundaries of what’s possible with code.", 20, 25);
+    decryptText("introText", "I’m a computer science and cybersecurity graduate student passionate about building secure systems, solving problems, software engineering,and pushing the boundaries of what’s possible with code.", 20, 25);
   }, 800);
 
   setInterval(updateStats, 1500);
