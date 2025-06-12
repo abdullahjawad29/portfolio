@@ -182,7 +182,7 @@ function updateLoadingBar() {
 }
 
 function goToTerminal() {
-  window.location.href = "terminal.html";
+  window.location.href = "Terminal.html";
 }
 
 document.addEventListener("DOMContentLoaded", () => {

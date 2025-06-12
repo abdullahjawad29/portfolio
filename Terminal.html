@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AJ HackTerm</title>
+  <link rel="stylesheet" href="Terminal.css" />
+</head>
+<body>
+  <div id="boot-sequence">
+    <div id="boot-lines"></div>
+  </div>
+
+  <div class="terminal-wrapper hidden">
+    <div class="terminal-header">AJ-HACKTERM v1.0</div>
+    <div class="terminal-body" id="terminal-output">
+      <pre>
+╔══════════════════════════════════════╗
+║ WELCOME TO AJ-HACKTERM PORTAL       ║
+║    type 'help' to get started       ║
+╚══════════════════════════════════════╝
+      </pre>
+    </div>
+    <div class="terminal-input">
+      <span class="prompt">aj@portfolio:~$</span>
+      <input type="text" id="cmd-input" autofocus autocomplete="off" />
+    </div>
+    <div class="terminal-footer">[SECURE TERMINAL] | user@abdullah | UPTIME: <span id="uptime">00:00:00</span></div>
+  </div>
+
+  <script src="Terminal.js"></script>
+</body>
+</html>

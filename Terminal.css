@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  background: black;
+  color: #00ff88;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+}
+
+#boot-sequence {
+  width: 100%;
+  height: 100vh;
+  background: black;
+  color: #00ff88;
+  font-family: monospace;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+#boot-lines div {
+  line-height: 1.5em;
+}
+
+.terminal-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.terminal-header, .terminal-footer {
+  padding: 5px;
+  background-color: #003322;
+  color: #00ff88;
+  text-align: center;
+  font-weight: bold;
+}
+
+.terminal-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  border-top: 1px solid #00ff88;
+  border-bottom: 1px solid #00ff88;
+}
+
+.terminal-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.prompt {
+  margin-right: 5px;
+}
+
+#cmd-input {
+  background: black;
+  color: #00ff88;
+  border: none;
+  outline: none;
+  flex: 1;
+  font-family: monospace;
+  font-size: 1em;
+}
