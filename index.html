@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abdullah Jawad Hackbox</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="loader" class="boot-screen">
+  <div class="boot-content">
+    <div class="logo">
+      █▓▒░ ⟁ PORTFOLIO SYSTEM INTERFACE ⟁ ░▒▓█
+    </div>
+    <div id="boot-messages" class="boot-messages"></div>
+    <div class="loading-bar-wrapper">
+      <div class="loading-bar" id="loading-bar"></div>
+      <div class="loading-percent" id="loading-percent">0%</div>
+    </div>
+  </div>
+</div>
+
+<div class="welcome-screen">
+  <div class="left-panel">
+  <h1 id="decryptedText" class="decrypt large fade-in pulse-glow">Loading...</h1>
+  <p id="introText" class="fade-in delay-1">...</p>
+
+  <div class="prompt">
+    <span>&gt;</span>
+    <button onclick="goToTerminal()">ENTER TERMINAL</button>
+  </div>
+</div>
+  <div class="right-panel">
+    <div id="introText" class="decrypt small placeholder">LOADING...</div>
+    
+<div class="system-stats">
+  <p>CPU Usage: <span id="cpuUsage">--%</span></p>
+  <p>Memory Usage: <span id="memUsage">--%</span></p>
+  <p>Uptime: <span id="uptime">--:--:--</span></p>
+
+  <hr />
+
+  <p>Node: <span id="nodeName">Loading...</span></p>
+  <p>IP Address: <span id="ipAddress">Loading...</span></p>
+  <p>Location: <span id="location">Loading...</span></p>
+  <p>Status: <span id="status">Loading...</span></p>
+  <p>System: <span id="fingerprint">Loading...</span></p>
+  <p>Session ID: <span id="sessionId">Loading...</span></p>
+</div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
