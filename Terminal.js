@@ -49,10 +49,13 @@ const output = document.getElementById("terminal-output");
 
 const commands = {
   help: `Available commands:
+PROFILE COMMANDS:
 - credentials
 - projects
 - experience
 - about
+SYSTEM COMMANDS:
+- help
 - sysinfo
 - fortune
 - sudo
@@ -73,7 +76,12 @@ const commands = {
 - chatgpt
 - singularity`,
 
-  credentials: () => "Redirecting to credentials...",
+ credentials: () => {
+    output.innerHTML += `Loading credentials...\n`;
+    setTimeout(() => {
+      window.location.href = "credentials.html";
+    }, 800);
+  },
   projects: () => "Redirecting to projects...",
   experience: () => "Redirecting to experience...",
   about: () => "Redirecting to about...",
