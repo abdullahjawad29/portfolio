@@ -89,7 +89,12 @@ SYSTEM COMMANDS:
   },
   projects: () => "Redirecting to projects...",
   experience: () => "Redirecting to experience...",
-  about: () => "Redirecting to about...",
+  about: () => {
+    output.innerHTML += `Loading profile...\n`;
+    setTimeout(() => {
+      window.location.href = "about.html";
+    }, 800);
+  },
 
   sudo: "Permission denied. This incident will be reported 😎",
   sysinfo: JSON.stringify({
