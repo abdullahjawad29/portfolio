@@ -48,12 +48,15 @@ const cmdInput = document.getElementById("cmd-input");
 const output = document.getElementById("terminal-output");
 
 const commands = {
-  help: `Available commands:
+  help: `
+Available commands:
+
 PROFILE COMMANDS:
 - credentials
 - projects
 - experience
 - about
+
 SYSTEM COMMANDS:
 - help
 - sysinfo
@@ -74,7 +77,9 @@ SYSTEM COMMANDS:
 - exploit
 - 42
 - chatgpt
-- singularity`,
+- singularity
+
+`,
 
  credentials: () => {
     output.innerHTML += `Loading credentials...\n`;
@@ -152,3 +157,70 @@ cmdInput.addEventListener("keydown", (e) => {
     output.scrollTop = output.scrollHeight;
   }
 });
+
+// GUI Card Keyboard Navigation and Click Support
+const cards = document.querySelectorAll('.gui-links .card');
+let selectedIndex = 0;
+
+function updateCardSelection(index) {
+  cards.forEach((card, i) => {
+    card.classList.toggle('selected', i === index);
+  });
+}
+
+document.addEventListener('keydown', (e) => {
+  if (['ArrowDown', 'ArrowUp', 'Enter'].includes(e.key)) {
+    if (document.activeElement === cmdInput) return; // Don't interfere with terminal typing
+
+    cards[selectedIndex].classList.remove('selected');
+
+    if (e.key === 'ArrowDown') {
+      selectedIndex = (selectedIndex + 1) % cards.length;
+    } else if (e.key === 'ArrowUp') {
+      selectedIndex = (selectedIndex - 1 + cards.length) % cards.length;
+    } else if (e.key === 'Enter') {
+      const page = cards[selectedIndex].getAttribute('data-page');
+      window.location.href = page;
+      return;
+    }
+
+    updateCardSelection(selectedIndex);
+  }
+});
+
+cards.forEach((card, i) => {
+  card.addEventListener('click', () => {
+    selectedIndex = i;
+    updateCardSelection(i);
+    window.location.href = card.getAttribute('data-page');
+  });
+});
+
+const pingCircle = document.getElementById("ping-circle");
+const ipDisplay = document.createElement("div");
+ipDisplay.id = "ip-display";
+document.getElementById("world-map-container").appendChild(ipDisplay);
+
+const locations = [
+  { top: "30%", left: "55%", ip: "102.45.23.11", city: "Berlin, DE" },
+  { top: "45%", left: "62%", ip: "176.13.80.92", city: "Cairo, EG" },
+  { top: "50%", left: "42%", ip: "66.37.210.19", city: "São Paulo, BR" },
+  { top: "38%", left: "75%", ip: "203.112.31.55", city: "Seoul, KR" },
+  { top: "32%", left: "48%", ip: "198.51.100.74", city: "Toronto, CA" },
+  { top: "40%", left: "70%", ip: "103.21.244.13", city: "Singapore" },
+  { top: "37%", left: "66%", ip: "91.200.12.33", city: "Lahore, PK" }
+];
+
+let pingIndex = 0;
+
+function cyclePing() {
+  const loc = locations[pingIndex];
+  pingCircle.style.top = loc.top;
+  pingCircle.style.left = loc.left;
+  ipDisplay.innerHTML = `Node: ${loc.city}<br>IP: ${loc.ip}`;
+
+  pingIndex = (pingIndex + 1) % locations.length;
+}
+
+// Start the cycle every 3 seconds
+setInterval(cyclePing, 3000);
