@@ -158,6 +158,7 @@ cmdInput.addEventListener("keydown", (e) => {
   }
 });
 
+
 // GUI Card Keyboard Navigation and Click Support
 const cards = document.querySelectorAll('.gui-links .card');
 let selectedIndex = 0;
@@ -167,6 +168,8 @@ function updateCardSelection(index) {
     card.classList.toggle('selected', i === index);
   });
 }
+
+
 
 document.addEventListener('keydown', (e) => {
   if (['ArrowDown', 'ArrowUp', 'Enter'].includes(e.key)) {
@@ -187,6 +190,7 @@ document.addEventListener('keydown', (e) => {
     updateCardSelection(selectedIndex);
   }
 });
+
 
 cards.forEach((card, i) => {
   card.addEventListener('click', () => {

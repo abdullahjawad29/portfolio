@@ -10,6 +10,7 @@ function updateMenu(index) {
   });
 }
 
+/*
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowDown") {
     currentIndex = (currentIndex + 1) % menuItems.length;
@@ -22,6 +23,7 @@ document.addEventListener("keydown", (e) => {
     if (link) window.location.href = link;
   }
 });
+*/
 
 menuItems.forEach((item, i) => {
   item.addEventListener("click", () => {
