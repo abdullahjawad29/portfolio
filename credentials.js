@@ -1,35 +1,18 @@
-const menuItems = document.querySelectorAll("#menu-items li");
-let currentIndex = 0;
+let currentFace = 0;
+const cube = document.getElementById("cube");
+const totalFaces = 6;
 
-// Highlight the first item
-menuItems[currentIndex].classList.add("active");
-
-function updateMenu(index) {
-  menuItems.forEach((item, i) => {
-    item.classList.toggle("active", i === index);
-  });
+function rotateCube(index) {
+  const angle = index * -60;
+  cube.style.transform = `rotateY(${angle}deg)`;
 }
 
-
 document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowDown") {
-    currentIndex = (currentIndex + 1) % menuItems.length;
-    updateMenu(currentIndex);
-  } else if (e.key === "ArrowUp") {
-    currentIndex = (currentIndex - 1 + menuItems.length) % menuItems.length;
-    updateMenu(currentIndex);
-  } else if (e.key === "Enter") {
-    const link = menuItems[currentIndex].getAttribute("data-link");
-    if (link) window.location.href = link;
+  if (e.key === "ArrowRight") {
+    currentFace = (currentFace + 1) % totalFaces;
+    rotateCube(currentFace);
+  } else if (e.key === "ArrowLeft") {
+    currentFace = (currentFace - 1 + totalFaces) % totalFaces;
+    rotateCube(currentFace);
   }
-});
-
-
-menuItems.forEach((item, i) => {
-  item.addEventListener("click", () => {
-    currentIndex = i;
-    updateMenu(i);
-    const link = item.getAttribute("data-link");
-    if (link) window.location.href = link;
-  });
 });
