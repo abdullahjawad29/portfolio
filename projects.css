@@ -156,9 +156,10 @@ body {
 
 .card-corner {
   position: absolute;
-  font-size: 0.95rem;
+  font-size: 2.25rem;           /* Increased size */
+  font-weight: bold;            /* Optional: adds nice punch */
   color: #00ffaa;
-  opacity: 0.6;
+  opacity: 0.8;
   font-family: 'Courier New', Courier, monospace;
   pointer-events: none;
 }
