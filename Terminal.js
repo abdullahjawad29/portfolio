@@ -93,7 +93,12 @@ SYSTEM COMMANDS:
       window.location.href = "projects.html";
     }, 800);
   },
-  experience: () => "Redirecting to experience...",
+  experience: () => {
+    output.innerHTML += `Loading experience...\n`;
+    setTimeout(() => {
+      window.location.href = "experience.html";
+    }, 800);
+  },
   about: () => {
     output.innerHTML += `Loading profile...\n`;
     setTimeout(() => {

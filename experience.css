@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  font-family: 'Courier New', monospace;
+  color: #00ff88;
+  overflow: hidden;
+}
+
+.terminal-header {
+  text-align: center;
+  margin: 20px auto;
+  font-size: 1.5rem;
+  text-shadow: 0 0 6px #00ff88;
+  letter-spacing: 2px;
+}
+
+.experience-layout {
+  display: flex;
+  width: 100vw;
+  height: 80vh;
+  margin: 0 auto;
+  padding: 0 2vw;
+  box-sizing: border-box;
+  gap: 2vw;
+}
+
+/* 3D Canvas Left */
+#scene-container {
+  width: 60%;
+  height: 100%;
+  border: 1px solid transparent;
+}
+
+/* Info Panel */
+.info-panel {
+  width: 32%;
+  padding: 20px 25px;
+  background: rgba(0, 26, 17, 0.92);
+  border: 1px solid #00ff88;
+  border-radius: 10px;
+  box-shadow: 0 0 18px #00ff88;
+  color: #66ffc2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 0.9rem;
+  height: 65%;
+  align-self: center;
+  max-height: 460px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #00ff88 transparent;
+}
+
+.info-panel::-webkit-scrollbar {
+  width: 6px;
+}
+.info-panel::-webkit-scrollbar-thumb {
+  background-color: #00ff88;
+  border-radius: 4px;
+}
+
+.instruction {
+  font-size: 0.9rem;
+  color: #00ffaa;
+  text-shadow: 0 0 3px #00ffaa;
+  margin-bottom: 20px;
+}
+
+.info-panel h2 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffaa;
+}
+
+.info-panel p {
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #66ffc2;
+}
+
+/* Experience Resume Blocks */
+.experience-block {
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.experience-block strong {
+  color: #00ffaa;
+  font-size: 1rem;
+  display: block;
+  margin-top: 1.2rem;
+}
+
+.experience-block .meta {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #66ffc2;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.experience-block ul {
+  padding-left: 1.2rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.experience-block li {
+  margin-bottom: 0.4rem;
+  list-style: disc;
+}
+
+/* Nav Buttons */
+.old-school-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+  background-color: #0a0a0a;
+  box-shadow: inset 0 0 10px #00ff88;
+  border-top: 1px solid #00ff88;
+  position: relative;
+  z-index: 10;
+}
+
+.old-school-nav button {
+  background: #001a11;
+  color: #00ff88;
+  font-family: monospace;
+  font-size: 14px;
+  border: 1px solid #00ff88;
+  padding: 10px 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px #00ff88;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.old-school-nav button:hover {
+  background: #00ff88;
+  color: black;
+  transform: scale(1.05);
+}
+
+.info-panel a {
+  color: #00ffaa;
+  text-decoration: underline;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.info-panel a:hover {
+  color: #66ffc2;
+  text-shadow: 0 0 6px #00ff88;
+}
+
+.info-panel a {
+  cursor: pointer;
+  font-weight: bold;
+}
