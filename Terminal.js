@@ -87,7 +87,12 @@ SYSTEM COMMANDS:
       window.location.href = "credentials.html";
     }, 800);
   },
-  projects: () => "Redirecting to projects...",
+  projects: () => {
+    output.innerHTML += `Loading projects...\n`;
+    setTimeout(() => {
+      window.location.href = "projects.html";
+    }, 800);
+  },
   experience: () => "Redirecting to experience...",
   about: () => {
     output.innerHTML += `Loading profile...\n`;
