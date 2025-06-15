@@ -55,3 +55,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCarousel();
 });
+
+// Mobile swipe support
+let touchStartX = 0;
+let touchEndX = 0;
+
+function handleGesture() {
+  const threshold = 50; // Minimum swipe distance in px
+  if (touchEndX < touchStartX - threshold) {
+    moveNext(); // swipe left
+  }
+  if (touchEndX > touchStartX + threshold) {
+    movePrev(); // swipe right
+  }
+}
+
+document.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleGesture();
+});

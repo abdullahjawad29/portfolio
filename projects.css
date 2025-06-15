@@ -183,3 +183,61 @@ body {
     box-shadow: 0 0 40px #00ffaa, 0 0 80px #00ffaa inset;
   }
 }
+
+@media (max-width: 768px) {
+  .carousel-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px 10px;
+    gap: 30px;
+    position: static;
+  }
+
+  .card {
+    position: static;
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+    padding: 1.5rem;
+    margin: 0 auto;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    box-shadow: 0 0 15px #00ff88;
+  }
+
+  .card-content {
+    gap: 0.8rem;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+  }
+
+  .project-role,
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .terminal-header {
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .card-corner {
+    font-size: 1.5rem;
+  }
+
+  .old-school-nav {
+    flex-direction: column;
+    gap: 10px;
+    margin: 25px auto;
+    align-items: center;
+  }
+
+  .old-school-nav button {
+    width: 90%;
+    max-width: 300px;
+  }
+}
