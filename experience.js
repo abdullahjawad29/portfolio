@@ -190,3 +190,18 @@ function animate() {
   renderer.render(scene, camera);
 }
 animate();
+
+const leftBtn = document.getElementById("leftBtn");
+const rightBtn = document.getElementById("rightBtn");
+
+if (leftBtn && rightBtn) {
+  leftBtn.addEventListener("click", () => {
+    currentNodeIndex = (currentNodeIndex - 1 + nodes.length) % nodes.length;
+    rotateToNode(currentNodeIndex);
+  });
+
+  rightBtn.addEventListener("click", () => {
+    currentNodeIndex = (currentNodeIndex + 1) % nodes.length;
+    rotateToNode(currentNodeIndex);
+  });
+}
