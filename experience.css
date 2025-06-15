@@ -224,13 +224,13 @@ body {
 
   /* === MOBILE NAV ARROWS === */
   .mobile-nav-arrows {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
-    position: relative;
-    z-index: 15;
-  }
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0;
+  position: relative;
+  z-index: 15;
+}
 
   .mobile-nav-arrows button {
     font-size: 1.8rem;

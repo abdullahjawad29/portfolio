@@ -179,6 +179,17 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+// Mobile arrow button support
+document.getElementById("prevMobile")?.addEventListener("click", () => {
+  currentNodeIndex = (currentNodeIndex - 1 + nodes.length) % nodes.length;
+  rotateToNode(currentNodeIndex);
+});
+
+document.getElementById("nextMobile")?.addEventListener("click", () => {
+  currentNodeIndex = (currentNodeIndex + 1) % nodes.length;
+  rotateToNode(currentNodeIndex);
+});
+
 window.addEventListener("resize", () => {
   camera.aspect = container.clientWidth / container.clientHeight;
   camera.updateProjectionMatrix();
